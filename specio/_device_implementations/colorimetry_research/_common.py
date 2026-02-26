@@ -151,7 +151,11 @@ class ResponseCode(int, Enum):
         super().__init__()
 
         for v_alias in value_aliases:
-            self._add_value_alias_(v_alias)
+            # _add_value_alias_ is Python 3.13+; fall back to manual map update
+            if hasattr(self, "_add_value_alias_"):
+                self._add_value_alias_(v_alias)
+            else:
+                self.__class__._value2member_map_[v_alias] = self
 
     @classmethod
     def _missing_(cls, value: object) -> "ResponseCode":  # noqa: ARG003
