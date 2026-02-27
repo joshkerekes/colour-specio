@@ -159,7 +159,7 @@ class CRSpectrometer(CRDeviceBase, SpecRadiometer):
         response = self._write_cmd("M")
         self._port.apply_settings({"timeout": t})
 
-        self._port.apply_settings({"timeout": 0.31})
+        self._port.apply_settings({"timeout": 5.0})
         response = self._write_cmd("RM Spectrum")
         self._port.apply_settings({"timeout": t})
 
