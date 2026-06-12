@@ -32,7 +32,7 @@ classifiers = [
 ]
 dependencies = [
     "colour-science>=0.4.6",
-    "numpy>=2.3.1",
+    "numpy>=2.2",
     "pyserial>=3.5",
     "protobuf>=5.27.0",
     "bidict>=0.23.1",
