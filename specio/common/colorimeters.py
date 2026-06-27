@@ -102,8 +102,8 @@ class ColorimeterMeasurement(BaseMeasurement):
             If XYZ array is not size 3.
         """
         XYZ = np.asarray(XYZ)
-        if XYZ.size != (3,):
-            RuntimeError("XYZ must be size (3,)")
+        if XYZ.size != 3:
+            raise RuntimeError("XYZ must be size (3,)")
 
         self.XYZ = XYZ
         self.exposure = exposure
